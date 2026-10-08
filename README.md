@@ -2,6 +2,19 @@
 
 A macOS app that removes applications together with the files they leave around the system, and finds leftovers from apps that were only dragged to the Trash.
 
+![Uninstalling an app: every file it owns, grouped by category](docs/applications.png)
+
+![Orphaned files left behind by apps that were dragged to the Trash](docs/orphans.png)
+
+## Download
+
+Get the latest zipped build from the [Releases page](https://github.com/b-ruth/Simple-Mac-Uninstaller/releases/latest). It runs on Apple silicon and Intel Macs with macOS 14 or later.
+
+The build is not notarized by Apple, so macOS blocks it the first time. After unzipping, either:
+
+- open it once, then go to **System Settings → Privacy & Security** and click **Open Anyway**, or
+- run `xattr -dr com.apple.quarantine /path/to/Uninstaller.app` in Terminal.
+
 ## Features
 
 - **Uninstall an app completely.** Select an app (or drop one onto the window) to see everything it owns: support files, caches, preferences, containers, saved state, cookies, logs, crash reports, launch agents and daemons, privileged helpers, installer receipts and temp files. Each match is labelled *Exact* (bundle identifier), *By name* or *Maybe*.
@@ -10,13 +23,13 @@ A macOS app that removes applications together with the files they leave around 
 
 Orphan detection is heuristic. Review *Possible* items before removing them.
 
-## Requirements
+## Building from source
+
+Requirements:
 
 - macOS 14 or later
 - Xcode 16 or later
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`) if you add or remove source files
-
-## Building
 
 ```sh
 xcodegen generate   # only needed after changing project.yml or the file layout
