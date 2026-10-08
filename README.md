@@ -49,3 +49,7 @@ Uninstaller.app/Contents/MacOS/Uninstaller --orphans
 ## Icon
 
 The app icon is drawn by `Scripts/make_icon.swift`.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
