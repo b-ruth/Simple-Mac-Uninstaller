@@ -1,4 +1,4 @@
-# Uninstaller
+# Simple Mac Uninstaller
 
 A macOS app that removes applications together with the files they leave around the system, and finds leftovers from apps that were only dragged to the Trash.
 
